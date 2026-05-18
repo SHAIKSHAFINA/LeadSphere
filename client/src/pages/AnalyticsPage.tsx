@@ -247,7 +247,7 @@ const AnalyticsPage = () => {
 
                   {statusData.map(
                     (
-                      entry,
+                      _,
                       index
                     ) => (
 
