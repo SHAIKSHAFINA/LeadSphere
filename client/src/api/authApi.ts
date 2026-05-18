@@ -23,7 +23,7 @@ export const loginUser = async (
   password: string
 ) => {
   const response = await API.post(
-    "/auth/login",
+    "api/auth/login",
     {
       email,
       password,
@@ -39,7 +39,7 @@ export const registerUser = async (
   password: string
 ) => {
   const response = await API.post(
-    "/auth/register",
+    "api/auth/register",
     {
       name,
       email,
