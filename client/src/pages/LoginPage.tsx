@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import AuthLayout from "../layouts/AuthLayout";
 
 import Input from "../components/ui/Input";
@@ -11,6 +13,8 @@ import { loginUser } from "../api/authApi";
 import toast from "react-hot-toast";
 
 const LoginPage = () => {
+
+  const navigate = useNavigate();
 
   const [email, setEmail] =
     useState("");
@@ -93,6 +97,17 @@ const LoginPage = () => {
 
     <AuthLayout>
 
+      {/* Logo / Title */}
+      <div className="text-center mb-4">
+
+        <h2 className="text-blue-500 text-2xl font-bold tracking-wide">
+
+          LeadSphere
+
+        </h2>
+
+      </div>
+
       {/* Header */}
       <div className="text-center mb-8">
 
@@ -145,6 +160,25 @@ const LoginPage = () => {
             handleLogin
           }
         />
+
+        {/* Register Navigation */}
+        <p className="mt-4 text-center text-sm text-gray-400">
+
+          New user?{" "}
+
+          <button
+            type="button"
+            onClick={() =>
+              navigate("/register")
+            }
+            className="text-blue-400 hover:underline font-medium"
+          >
+
+            Register now
+
+          </button>
+
+        </p>
 
       </div>
 
