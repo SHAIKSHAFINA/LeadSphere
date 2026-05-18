@@ -1,15 +1,18 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 API.interceptors.request.use((config) => {
+
   const token =
     localStorage.getItem("token");
 
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+
+    config.headers.Authorization =
+      `Bearer ${token}`;
   }
 
   return config;
@@ -22,8 +25,9 @@ export const getLeads = async (
   sort = "latest",
   page = 1
 ) => {
+
   const response = await API.get(
-    "/leads",
+    "/api/leads",
     {
       params: {
         search,
@@ -47,8 +51,9 @@ export const createLead = async (
     source: string;
   }
 ) => {
+
   const response = await API.post(
-    "/leads",
+    "/api/leads",
     leadData
   );
 
@@ -66,7 +71,7 @@ export const updateLead = async (
 ) => {
 
   const response = await API.put(
-    `/leads/${id}`,
+    `/api/leads/${id}`,
     leadData
   );
 
@@ -75,18 +80,20 @@ export const updateLead = async (
 
 export const getLeadStats =
   async () => {
+
     const response = await API.get(
-      "/leads/stats"
+      "/api/leads/stats"
     );
 
     return response.data;
   };
-  export const exportLeadsCSV =
+
+export const exportLeadsCSV =
   async () => {
 
     const response =
       await API.get(
-        "/leads/export/csv",
+        "/api/leads/export/csv",
         {
           responseType: "blob",
         }
@@ -94,23 +101,27 @@ export const getLeadStats =
 
     return response.data;
   };
-  export const deleteLead =
+
+export const deleteLead =
   async (id: string) => {
 
     const response =
       await API.delete(
-        `/leads/${id}`
+        `/api/leads/${id}`
       );
 
     return response.data;
   };
-  export const getSingleLead =
+
+export const getSingleLead =
   async (id: string) => {
 
     const response =
       await API.get(
-        `/leads/${id}`
+        `/api/leads/${id}`
       );
 
     return response.data;
   };
+
+export default API;
