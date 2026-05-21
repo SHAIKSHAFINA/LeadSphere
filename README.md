@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/-GigFlow-6366f1?style=for-the-badge&logoColor=white" height="45"/>
+<img src="https://img.shields.io/badge/-LeadSphere-6366f1?style=for-the-badge&logoColor=white" height="45"/>
 
 ### Smart Leads Dashboard
 
@@ -30,7 +30,7 @@
 
 ## Overview
 
-GigFlow is a full-stack Lead Management Dashboard that centralises the entire sales pipeline into one clean interface. Built end-to-end with TypeScript, it supports role-based access control, debounced real-time search, multi-filter querying, paginated data fetching, analytics insights, and one-click CSV export — deployed and production-ready on Render.
+LeadSphere is a full-stack Lead Management Dashboard that centralises the entire sales pipeline into one clean interface. Built end-to-end with TypeScript, it supports role-based access control, debounced real-time search, multi-filter querying, paginated data fetching, analytics insights, and one-click CSV export — deployed and production-ready on Render.
 
 ---
 
